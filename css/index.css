@@ -1,28 +1,32 @@
 body {
   margin: 0;
   padding: 0;
-
+  display: flex;
+  flex-direction: column;
   align-items: center;
-
-  background-color: #0093E9;
-  background: linear-gradient(600deg, #0093E9 0%, #80D0C7 100%);
-
+  /* background: linear-gradient(60deg, #0093E9 0%, #80D0C7 100%); */
+  /* background-color: #333333; */
   font-family: Arial, sans-serif;
 }
-
+a{
+  text-decoration: none;
+  color:inherit
+}
 ul#nav {
   display: flex;
+  /* background: linear-gradient(60deg, #0093E9 0%, #80D0C7 100%); */
+  background-color: #302b63;
+
   justify-content: center;
-  margin-left: 30%;
-  margin-right: 30%;
   gap: 30px;
   list-style: none;
   padding: 10px 20px;
-  background: rgba(255, 255, 255, 0.1);
+  /* background: rgba(255, 255, 255, 0.1); */
   border-radius: 10px;
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease-in-out;
+  margin: 20px 0;
 }
 
 ul#nav:hover {
@@ -62,34 +66,48 @@ ul#nav li:hover::after {
   transform: scaleX(1);
   transform-origin: left;
 }
+
 @keyframes slide-in-left {
   from {
     transform: translateX(-100%);
     opacity: 0;
-}
-to {
+  }
+  to {
     transform: translateX(0);
     opacity: 1;
+  }
 }
-}
+
 #hero {
-  color: #333333  ;
+  color: #333333;
+  /* background-color: #0295b9; */
+  background-color: #302b63;
+  
   display: flex;
   justify-content: space-between;
-  margin-right: 10%;
+  padding: 30px 5%;
+  border-radius: 40px;
+  max-width: 80%;
+  margin: 20px auto;
 }
 
 #hero-left {
+  color: #ffcc00;
   display: grid;
   padding: 10%;
-  max-width: 100%;
+  max-width: 50%;
   animation: slide-in-left 1s ease-in;
+}
+
+#hero-left h1 {
+  margin-bottom: 10px;
 }
 
 #hero-left button {
   width: max-content;
   align-self: center;
 }
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -99,49 +117,42 @@ to {
     opacity: 1;
     transform: translateY(0);
   }
+}
+#hero-right{
+  padding-top: 10%;
 
 }
-@keyframes fadeOutUp {
-  0% {
-      opacity: 1;
-      transform: translateY(0);
-  }
-  100% {
-      opacity: 0;
-      transform: translateY(-20px); 
-  }
-}
-
-
-
 #hero-right img {
-  margin-top: 30%;
   max-width: 100%;
-  max-height: 130%;
-  border-radius: 30px;
+  max-height: 100%;
+  border-radius: 35px;
   animation: fadeInUp 1s ease-out;
-  
 }
-
 
 #why-choose-us {
   display: flex;
-  flex-wrap: wrap; 
-  justify-content: center; 
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 30px;
   padding: 50px;
   text-align: center;
+  /* background-color: #0295b9; */
+  background-color: #302b63;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
 }
 
 .card {
   background-color: #ffffff;
+  
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
-  width: 280px; 
-  flex: 1 1 280px; 
-  max-width: 300px; 
+  width: 280px;
+  flex: 1 1 280px;
+  max-width: 300px;
 }
 
 .card:hover {
@@ -157,30 +168,22 @@ to {
 .card h3 {
   font-size: 20px;
   font-weight: bold;
-  color: #0093E9;
+  /* color: #0093E9; */
+  color: #ffcc00;
 }
 
 .card p {
   font-size: 16px;
   color: #555;
 }
-table {
-  margin-top: 40%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 70%;
-  border-collapse: collapse;
-  margin-top: 40px;
-  margin-left: auto;
-  margin-right: auto;
-}
 
-tr {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  width: 90%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 th, td {
@@ -188,12 +191,12 @@ th, td {
   text-align: left;
   font-size: 16px;
   border-bottom: 1px solid #ddd;
-  color: white;
-  flex: 1;
+  color: black;
 }
 
 th {
-  background-color: #0093E9;
+  /* background-color: #0093E9; */
+  background-color: #302b63;
   color: white;
   font-weight: bold;
 }
@@ -204,10 +207,6 @@ tr:nth-child(even) {
 
 tr:nth-child(odd) {
   background-color: rgba(255, 255, 255, 0.15);
-}
-
-td {
-  background-color: rgba(255, 255, 255, 0.05);
 }
 
 tr:hover {
@@ -221,37 +220,28 @@ th, td:last-child {
 .slideshow-container {
   max-width: 1000px;
   position: relative;
-  margin: auto;
+  margin: 20px auto;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(9.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 20px;
 }
 
-/* Caption text */
-.slideshow-container {
-  position: relative;
-  width: 100%;
-  max-width: 800px;
-  margin-top: 100px;
-  overflow: hidden;
-  background: rgba( 255, 255, 255, 0.45 );
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 9.5px );
-  -webkit-backdrop-filter: blur( 9.5px );
-  border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
-}
-.slideshow-container h1, h2{
+.slideshow-container h1, h2 {
   font-size: 24px;
-  color: white;
+  color: #333;
   text-align: center;
   padding: 10px;
 }
-
 
 .stars {
   font-size: 20px;
   color: #ffcc00;
   text-align: center;
 }
-
 
 .dot {
   height: 15px;
@@ -263,21 +253,83 @@ th, td:last-child {
   transition: background-color 0.6s ease;
 }
 
-
 .active {
   background-color: #717171;
 }
 
-
 .mySlides {
   display: none;
 }
+
 @keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .fade {
   animation-name: fade;
   animation-duration: 1.5s;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  
+  align-items: center;
+  padding: 20px 50px;
+  background: linear-gradient(90deg, #0093E9 0%, #80D0C7 100%);
+  color: white;
+  border-top: 3px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+}
+
+footer #left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+footer #left img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+footer #left a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+footer #left a:hover {
+  color: #ffcc00;
+}
+
+footer #right {
+  display: flex;
+  gap: 15px;
+}
+
+footer #right a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+footer #right a:hover {
+  transform: scale(1.1);
+  color: #ffcc00;
+}
+
+footer p {
+  font-size: 14px;
+  opacity: 0.8;
 }
