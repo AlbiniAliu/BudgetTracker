@@ -1,14 +1,24 @@
 const sidebar = document.querySelector('.sidebar');
 const toggleBtn = document.querySelector('#toggle-btn');
 
-// Add a click event listener to the toggle button
+
 toggleBtn.addEventListener('click', () => {
   sidebar.classList.toggle('close');
+  const isSidebarOpen = document.querySelector('.sidebar').classList.contains('close');
+  if (isSidebarOpen) {
+    toggleBtn.classList.remove('bx-menu-alt-right');
+    toggleBtn.classList.add('bx-menu');
+} else {
+    toggleBtn.classList.remove('bx-menu');
+    toggleBtn.classList.add('bx-menu-alt-right');
+}
+
 });
 const chartData = {
   labels: ["Groceries", "Entertainment", "Bills"],
   datasets: [
     {
+      
       data: [30, 20, 50],
       backgroundColor: ["#ff6384", "#36a2eb", "#cc65fe"],
       hoverBackgroundColor: ["#ff6384", "#36a2eb", "#cc65fe"]
@@ -16,7 +26,7 @@ const chartData = {
   ]
 };
 
-// Create the pie chart
+
 const ctx = document.getElementById("myPieChart").getContext("2d");
 const myPieChart = new Chart(ctx, {
   type: "pie",
@@ -40,7 +50,6 @@ document.getElementById("dataForm").addEventListener("submit", function (e) {
   
   const categoryName = document.getElementById("categoryName").value;
   const categoryValue = parseFloat(document.getElementById("categoryValue").value);
-  
   if (!categoryName || isNaN(categoryValue)) {
     alert("Please enter valid data.");
     return;
@@ -97,4 +106,47 @@ function toggleTask(checkbox) {
   } else {
       taskDiv.classList.remove("completed");   
   }
+}
+function addRow() {
+  
+  const tableBody = document.getElementById('tableBody');
+
+  
+  const budgetName = document.getElementById('budgetName').value;
+  const category = document.getElementById('category').value;
+  const totalBudget = parseFloat(document.getElementById('totalBudget').value) || 0;
+  const amountSpent = parseFloat(document.getElementById('amountSpent').value) || 0;
+  const remainingAmount = totalBudget - amountSpent;
+  const startDate = document.getElementById('startDate').value;
+  const endDate = document.getElementById('endDate').value;
+  const percentage = (parseFloat(amountSpent) / parseFloat(totalBudget)) * 100;
+  
+  const newRow = document.createElement('tr');
+
+  
+  newRow.innerHTML = `
+    <td>${budgetName}</td>
+    <td>${category}</td>
+    <td>${totalBudget.toFixed(2)}</td>
+    <td>${amountSpent.toFixed(2)}</td>
+    <td>${remainingAmount.toFixed(2)}</td>
+    <td>${startDate}</td>
+    <td>${endDate}</td>
+    
+    <td>${percentage.toFixed(2)+'%'}</td>
+  `;
+
+  
+  tableBody.appendChild(newRow);
+
+  
+  document.getElementById('budgetName').value = '';
+  document.getElementById('category').value = 'Housing';
+  document.getElementById('totalBudget').value = '';
+  document.getElementById('amountSpent').value = '';
+  document.getElementById('remainingAmount').value = '';
+  document.getElementById('startDate').value = '';
+  document.getElementById('endDate').value = '';
+  document.getElementById('percent').value = '';
+
 }
