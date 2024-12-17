@@ -4,74 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/dashboard.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css" rel="stylesheet">
+
 
     <title>Dashboard</title>
 </head>
 <body>
-    ody>
     <div class="sidebar">
         <div class="logo-details">
-           
-            <i class='bx bx-menu' id="btn"></i>
+          <i class="bx bx-money"></i>
+          <span class="logo_name">Budget Tracker</span>
+          <i class="bx bx-menu" id="toggle-btn"></i>
         </div>
         <ul class="nav-list">
-            <li>
-                <i class='bx bx-search'></i>
-                <input type="text" placeholder="Search...">
-                <span class="tooltip">Search</span>
-            </li>
-            <li>
-                <a href="">
-                    <i class='bx bx-grid-alt'></i>
-                    <span class="links_name">Dashboard</span>
-                </a>
-                <span class="tooltip">Dashboard</span>
-            </li>
-            <li>
-                <a href="">
-                    <i class='bx bx-user'></i>
-                    <span class="links_name">User</span>
-                </a>
-                <span class="tooltip">User</span>
-            </li>
-            <li>
-                <a href="">
-                    <i class='bx bx-chat'></i>
-                    <span class="links_name">Transaction</span>
-                </a>
-                <span class="tooltip">Transaction</span>
-            </li>
-            <li>
-                <a href="">
-                    <i class='bx bx-pie-chart-alt-2'></i>
-                    <span class="links_name">Reports</span>
-                </a>
-                <span class="tooltip">Reports</span>
-            </li>
-            <li>
-                <a href="">
-                    <i class='bx bx-folder'></i>
-                    <span class="links_name">Goals</span>
-                </a>
-                <span class="tooltip">Goals</span>
-            </li>
-            
-            <li class="profile">
-                <div class="profile-details">
-                    <img src="./images/profile.png" alt="profileImg">
-                    <div class="name_job">
-                        <div class="name">const Genius</div>
-                        <div class="job">Web Developer</div>
-                    </div>
-                </div>
-                <i class='bx bx-log-out' id="log_out"></i>
-            </li>
+          <li>
+            <a href="#dashboard">
+              <i class="bx bx-grid-alt"></i>
+              <span class="links_name">Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="#profile">
+              <i class="bx bx-user"></i>
+              <span class="links_name">Profile</span>
+            </a>
+          </li>
+          <li>
+            <a href="#transactions">
+              <i class="bx bx-transfer"></i>
+              <span class="links_name">Transactions</span>
+            </a>
+          </li>
+          <li>
+            <a href="#reports">
+              <i class="bx bx-bar-chart-alt"></i>
+              <span class="links_name">Reports</span>
+            </a>
+          </li>
+          <li>
+            <a href="#goals">
+              <i class="bx bx-target-lock"></i>
+              <span class="links_name">Goals</span>
+            </a>
+          </li>
+          <li>
+            <a href="#settings">
+              <i class="bx bx-cog"></i>
+              <span class="links_name">Settings</span>
+            </a>
+          </li>
+          <li>
+            <a href="#help">
+              <i class="bx bx-help-circle"></i>
+              <span class="links_name">Help</span>
+            </a>
+          </li>
+          <li class="logout">
+            <a href="#logout">
+              <i class="bx bx-log-out"></i>
+              <span class="links_name">Logout</span>
+            </a>
+          </li>
         </ul>
-    </div>
-    <section class="home-section">
-        <h1>Welcome <span>[]</span></h1>
-    </section>
+      </div>
+    
+      <section class="home-section">
+        <div class="text">Welcome to your dashboard!</div>
+      </section>
+    
     <script src="js/dashboard.js"></script>
 </body>
 </html>
