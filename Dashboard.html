@@ -17,12 +17,12 @@
         </div>
         <ul class="nav-list">
             <li><a href="#dashboard"><i class="bx bx-grid-alt"></i><span class="links_name">Dashboard</span></a></li>
-            <li><a href="#profile"><i class="bx bx-user"></i><span class="links_name">Profile</span></a></li>
-            <li><a href="#transactions"><i class="bx bx-transfer"></i><span class="links_name">Transactions</span></a></li>
-            <li><a href="#reports"><i class="bx bx-bar-chart-alt"></i><span class="links_name">Reports</span></a></li>
-            <li><a href="#goals"><i class="bx bx-target-lock"></i><span class="links_name">Goals</span></a></li>
-            <li><a href="#settings"><i class="bx bx-cog"></i><span class="links_name">Settings</span></a></li>
-            <li><a href="#help"><i class="bx bx-help-circle"></i><span class="links_name">Help</span></a></li>
+            <li><a href="Profile.html"><i class="bx bx-user"></i><span class="links_name">Profile</span></a></li>
+            <li><a href="Transaction.html"><i class="bx bx-transfer"></i><span class="links_name">Transactions</span></a></li>
+            <li><a href="Report.html"><i class="bx bx-bar-chart-alt"></i><span class="links_name">Reports</span></a></li>
+            <li><a href="Goals.html"><i class="bx bx-target-lock"></i><span class="links_name">Goals</span></a></li>
+            <li><a href="Settings.html"><i class="bx bx-cog"></i><span class="links_name">Settings</span></a></li>
+            <li><a href="Help.html"><i class="bx bx-help-circle"></i><span class="links_name">Help</span></a></li>
             <li class="logout"><a href="#logout"><i class="bx bx-log-out"></i><span class="links_name">Logout</span></a></li>
         </ul>
     </div>
@@ -80,10 +80,28 @@
         </table>
         <h1 id="goals">Savings Goal</h1>
         <div id="detailsContainer"></div>
-        <div>
-            <h1>Upcoming Deadlines</h1>
-            <div class="vl"></div>
-        </div>
+       <div class="upcoming-deadlines-section">
+    <div class="danger-indicator"></div>
+    <div class="deadlines-form">
+      <h2>Upcoming Deadlines</h2>
+      <form id="deadlineForm">
+        <label for="billName">Bill Name:</label>
+        <input type="text" id="billName" placeholder="Enter bill name">
+        <label for="dueDate">Due Date:</label>
+        <input type="date" id="dueDate">
+        <label for="amountDue">Amount Due:</label>
+        <input type="number" id="amountDue" placeholder="Enter amount due">
+        <label for="priority">Priority Level:</label>
+        <select id="priority">
+          <option value="green">Done (Low Priority)</option>
+          <option value="yellow">Incoming (Medium Priority)</option>
+          <option value="red">Urgent (High Priority)</option>
+        </select>
+        <button type="button" onclick="addDeadline()">Add Deadline</button>
+      </form>
+      <div id="deadlinesList"></div>
+    </div>
+  </div>
     </section>
     <script src="js/dashboard.js"></script>
 </body>

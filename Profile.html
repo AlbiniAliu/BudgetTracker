@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Profile.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+            <i class="bx bx-money"></i>
+            <span class="logo_name">Budget Tracker</span>
+            <i class="bx bx-menu" id="toggle-btn"></i>
+        </div>
+        <ul class="nav-list">
+            <li><a href="Dashboard.html"><i class="bx bx-grid-alt"></i><span class="links_name">Dashboard</span></a></li>
+            <li><a href="#profile"><i class="bx bx-user"></i><span class="links_name">Profile</span></a></li>
+            <li><a href="Transaction.html"><i class="bx bx-transfer"></i><span class="links_name">Transactions</span></a></li>
+            <li><a href="Report.html"><i class="bx bx-bar-chart-alt"></i><span class="links_name">Reports</span></a></li>
+            <li><a href="Goals.html"><i class="bx bx-target-lock"></i><span class="links_name">Goals</span></a></li>
+            <li><a href="Settings.html"><i class="bx bx-cog"></i><span class="links_name">Settings</span></a></li>
+            <li><a href="Help.html"><i class="bx bx-help-circle"></i><span class="links_name">Help</span></a></li>
+            <li class="logout"><a href="#logout"><i class="bx bx-log-out"></i><span class="links_name">Logout</span></a></li>
+        </ul>
+    </div>
+    <section class="home-section">
+        <div id="welcome">
+            <h1>Welcome To Your Profile <span>[User]</span></h1>
+            <img src="images/user.png" alt="Profile Picture" id="profileImage">
+            <div class="profile-actions">
+                <button type="button" id="uploadBtn">Enter Your Profile Picture</button>
+                <input type="file" name="Profile" id="profileInput" accept="image/*">
+            </div>
+        </div>  
+        <div id="UserInfo">
+            <div id="BasicInfo">
+                <p id="FullName">Full Name</p>
+                <p>John Smith</p>
+                <p id="Email">Email</p>
+                <p>ex@ample.email</p>
+                <p id="PhoneNumber">Phone Number</p>
+                <p>+123-345-678-90</p>
+            </div>
+            
+            <div id="AccountInfo">
+                <p id="Username">Username</p>
+                <p>john_smith</p>
+                <p id="DateJoined">Date Joined</p>
+                <p>January 1, 2023</p>
+                <p id="Membership">Membership Tier</p>
+                <p>Free</p>
+            </div>
+        
+            <div id="ActionButtons">
+                <button id="EditBtn">Edit Information</button>
+                <button id="SaveChangesBtn">Save Changes</button>
+            </div>
+            
+            <div id="SecuritySettings">
+                <p id="ChangePassword">Change Password</p>
+                <button id="ChangePasswordBtn">Change</button>
+            </div>
+        
+            <div id="ExportDelete">
+                <button id="ExportDataBtn">Export Data</button>
+                <button id="DeleteAccountBtn">Delete Account</button>
+            </div>
+        </div>
+        
+    </section>
+    <script src="js/Profile.js"></script>
+</body>
+</html>
