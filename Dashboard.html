@@ -11,27 +11,24 @@
 <body>
     <div class="sidebar">
         <div class="logo-details">
-          <i class="bx bx-money"></i>
-          <span class="logo_name">Budget Tracker</span>
-          <i class="bx bx-menu" id="toggle-btn"></i>
+            <i class="bx bx-money"></i>
+            <span class="logo_name">Budget Tracker</span>
+            <i class="bx bx-menu" id="toggle-btn"></i>
         </div>
         <ul class="nav-list">
-          <li><a href="#dashboard"><i class="bx bx-grid-alt"></i><span class="links_name">Dashboard</span></a></li>
-          <li><a href="#profile"><i class="bx bx-user"></i><span class="links_name">Profile</span></a></li>
-          <li><a href="#transactions"><i class="bx bx-transfer"></i><span class="links_name">Transactions</span></a></li>
-          <li><a href="#reports"><i class="bx bx-bar-chart-alt"></i><span class="links_name">Reports</span></a></li>
-          <li><a href="#goals"><i class="bx bx-target-lock"></i><span class="links_name">Goals</span></a></li>
-          <li><a href="#settings"><i class="bx bx-cog"></i><span class="links_name">Settings</span></a></li>
-          <li><a href="#help"><i class="bx bx-help-circle"></i><span class="links_name">Help</span></a></li>
-          <li class="logout"><a href="#logout"><i class="bx bx-log-out"></i><span class="links_name">Logout</span></a></li>
+            <li><a href="#dashboard"><i class="bx bx-grid-alt"></i><span class="links_name">Dashboard</span></a></li>
+            <li><a href="#profile"><i class="bx bx-user"></i><span class="links_name">Profile</span></a></li>
+            <li><a href="#transactions"><i class="bx bx-transfer"></i><span class="links_name">Transactions</span></a></li>
+            <li><a href="#reports"><i class="bx bx-bar-chart-alt"></i><span class="links_name">Reports</span></a></li>
+            <li><a href="#goals"><i class="bx bx-target-lock"></i><span class="links_name">Goals</span></a></li>
+            <li><a href="#settings"><i class="bx bx-cog"></i><span class="links_name">Settings</span></a></li>
+            <li><a href="#help"><i class="bx bx-help-circle"></i><span class="links_name">Help</span></a></li>
+            <li class="logout"><a href="#logout"><i class="bx bx-log-out"></i><span class="links_name">Logout</span></a></li>
         </ul>
     </div>
-    
     <section class="home-section">
-        <div class="text">Welcome to your dashboard, <span id="userName">[User]</span>!
-    </div>
-    <img src="images/user.png" alt="user">
-
+        <div class="text" id="dashboard">Welcome to your dashboard, <span id="userName">[User]</span>!</div>
+        <img src="images/user.png" alt="user">
         <div class="content-wrapper">
             <div class="form-wrapper">
                 <form id="dataForm">
@@ -44,21 +41,10 @@
                     <button type="submit">Add Data</button>
                 </form>
             </div>
-
             <div class="chart-wrapper">
                 <canvas id="myPieChart"></canvas>
             </div>
         </div>
-
-        <div class="input-section">
-            <input type="text" id="taskInput" placeholder="Task Name">
-            <button onclick="addTask()">+ Add Task</button>
-        </div>
-
-        <div class="task-container-wrapper">
-            <div class="task-container" id="taskContainer"></div>
-        </div>
-        
         <table border="1">
             <thead>
                 <tr>
@@ -66,7 +52,7 @@
                     <th>Category</th>
                     <th>Total Budget</th>
                     <th>Amount Spent</th>
-                    <th>Remaining Amount</th>
+                    <!-- <th>Remaining Amount</th> -->
                     <th>Start Date</th>
                     <th>End Date</th>
                     <th>Add</th>
@@ -85,20 +71,20 @@
                     </td>
                     <td><input type="number" id="totalBudget" placeholder="Enter Total Budget"></td>
                     <td><input type="number" id="amountSpent" placeholder="Enter Amount Spent"></td>
-                    <td><input type="number" id="remainingAmount" placeholder="Remaining Amount" ></td>
+
                     <td><input type="date" id="startDate"></td>
                     <td><input type="date" id="endDate"></td>
-                    
-
-                    <td><button onclick="addRow()">ADD</button></td>
+                    <td><button onclick="addRowAndDetails()">ADD</button></td>
                 </tr>
             </tbody>
         </table>
-        <div>albini</div>
-        
+        <h1 id="goals">Savings Goal</h1>
+        <div id="detailsContainer"></div>
+        <div>
+            <h1>Upcoming Deadlines</h1>
+            <div class="vl"></div>
+        </div>
     </section>
-    
-    
     <script src="js/dashboard.js"></script>
 </body>
 </html>

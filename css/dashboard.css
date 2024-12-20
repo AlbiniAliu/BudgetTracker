@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* border: 1px solid red; */
 }
 
 body {
@@ -227,6 +228,9 @@ canvas {
 .input-section button:hover {
   background-color: #ffcc00;
 }
+.taskDiv{
+  background-color: #0093E9;
+}
 table {
   width: 100%;
   border-collapse: collapse;
@@ -300,4 +304,101 @@ td button {
 td button:hover {
   background: #ffcc00;
   color: #1E1E2E;
+}
+#detailsContainer {
+  margin-top: 20px;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+  /* background: rgba(255, 255, 255, 0.05); */
+  border-radius: 10px;
+  animation: fadeIn 0.5s ease-in-out;
+  
+}
+
+.progress-details {
+  flex: 1 1 calc(30% - 20px);
+  max-width: calc(30% - 20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.progress-details h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.circular-progress {
+  --percentage: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #4caf50 calc(var(--percentage) * 1%),
+    #ddd 0%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  margin: 15px 0;
+}
+
+.motivational-message {
+  font-size: 16px;
+  font-style: italic;
+  color: #ffcc00;
+  margin: 10px 0;
+  animation: fadeIn 1s ease-in-out;
+}
+
+#detailsContainer p {
+  font-size: 14px;
+  color: #ddd;
+  margin: 5px 0;
+}
+.update-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.update-input {
+  width: 60%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 14px;
+}
+
+.update-btn {
+  padding: 8px 15px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.update-btn:hover {
+  background: #45a049;
+  transform: scale(1.05);
 }

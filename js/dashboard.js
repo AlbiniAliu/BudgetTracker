@@ -74,11 +74,18 @@ document.getElementById("dataForm").addEventListener("submit", function (e) {
 function addTask() {
   const taskInput = document.getElementById("taskInput");
   const taskText = taskInput.value.trim();
+  const amountInput = document.getElementById("amountInput");
+
 
   if (taskText === "") {
-      alert("Ju lutem shkruani një task!");
+      alert("Input your !");
       return;
   }
+
+  if (amountInput === "") {
+    alert("Input your goal!");
+    return;
+}
 
   
   const taskHTML = `
@@ -95,6 +102,7 @@ function addTask() {
 
   
   taskInput.value = "";
+
 }
 
 function toggleTask(checkbox) {
@@ -149,4 +157,68 @@ function addRow() {
   document.getElementById('endDate').value = '';
   document.getElementById('percent').value = '';
 
+}
+function addRowAndDetails() {
+  const tableBody = document.getElementById("tableBody");
+  const detailsContainer = document.getElementById("detailsContainer");
+
+  const budgetName = document.getElementById("budgetName").value;
+  const category = document.getElementById("category").value;
+  const totalBudget = parseFloat(document.getElementById("totalBudget").value) || 0;
+  const amountSpent = parseFloat(document.getElementById("amountSpent").value) || 0;
+  const remainingAmount = totalBudget - amountSpent;
+  const percentage = (amountSpent / totalBudget) * 100 || 0;
+
+  const motivationalMessages = [
+    "Keep going! You're doing great!",
+    "Small steps lead to big achievements!",
+    "You're closer to your goal every day!",
+    "Amazing progress so far!",
+  ];
+  const randomMessage = motivationalMessages[Math.floor(Math.random() * motivationalMessages.length)];
+
+  const newRow = document.createElement("tr");
+  newRow.innerHTML = `
+    <td>${budgetName}</td>
+    <td>${category}</td>
+    <td>${totalBudget.toFixed(2)}</td>
+    <td>${amountSpent.toFixed(2)}</td>
+    <td>${remainingAmount.toFixed(2)}</td>
+    <td>${document.getElementById("startDate").value}</td>
+    <td>${document.getElementById("endDate").value}</td>
+  `;
+  tableBody.appendChild(newRow);
+
+  const details = document.createElement("div");
+  details.classList.add("progress-details");
+  details.innerHTML = `
+    <h3>${budgetName}</h3>
+    <div class="circular-progress" style="--percentage:${percentage}">
+      ${percentage.toFixed(2)}%
+    </div>
+    <p>Total Budget: $${totalBudget.toFixed(2)}</p>
+    <p>Amount Spent: $${amountSpent.toFixed(2)}</p>
+    <p class="remaining">Remaining: $${remainingAmount.toFixed(2)}</p>
+    <div class="update-section">
+      <input type="number" placeholder="Add Amount" class="update-input">
+      <button class="update-btn">Update</button>
+    </div>
+    <div class="motivational-message">${randomMessage}</div>
+  `;
+  detailsContainer.appendChild(details);
+
+  const updateButton = details.querySelector(".update-btn");
+  updateButton.addEventListener("click", () => {
+    const inputField = details.querySelector(".update-input");
+    const addAmount = parseFloat(inputField.value) || 0;
+    const updatedSpent = amountSpent + addAmount;
+    const updatedPercentage = (updatedSpent / totalBudget) * 100;
+    const updatedRemaining = totalBudget - updatedSpent;
+
+    details.querySelector(".circular-progress").style.setProperty("--percentage", updatedPercentage);
+    details.querySelector(".circular-progress").textContent = `${updatedPercentage.toFixed(2)}%`;
+    details.querySelector(".remaining").textContent = `Remaining: $${updatedRemaining.toFixed(2)}`;
+
+    inputField.value = "";
+  });
 }
