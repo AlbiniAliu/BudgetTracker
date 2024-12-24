@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/Transaction.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <title>Dashboard</title>
+    <title>Transactions</title>
 </head>
 <body>
     <div class="sidebar">
@@ -30,11 +30,46 @@
         <div id="welcome">
             <h1>Welcome To Your Transactions <span>[User]</span></h1>
             <img src="images/user.png" alt="Profile Picture" id="profileImage">
-          
-            
         </div>  
-        
-        
+        <div id="transaction-overview">
+            <div class="overview-card" id="income-card">
+                <h2>Total Income</h2>
+                <p>$100000</p>
+            </div>
+            <div class="overview-card" id="expenses-card">
+                <h2>Total Expenses</h2>
+                <p>$0</p>
+            </div>
+            <div class="overview-card" id="balance-card">
+                <h2>Current Balance</h2>
+                <p>$0</p>
+            </div>
+        </div>
+        <div id="transactions-form">
+            <h2>Add New Transaction</h2>
+            <form id="transactionForm">
+                <input type="text" id="transactionName" placeholder="Transaction Name" required>
+                <input type="text" id="transactionDescription" placeholder="Description" required>
+                <input type="number" id="transactionAmount" placeholder="Amount" required>
+                <input type="date" id="transactionDate" required>
+                <button type="button" onclick="addTransaction()">Add Transaction</button>
+            </form>
+        </div>
+        <div id="transactions-list">
+            <h2>Transaction History</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody id="transactionTableBody">
+                </tbody>
+            </table>
+        </div>
     </section>
     <script src="js/Transaction.js"></script>
 </body>
