@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -148,12 +149,12 @@
     padding: 20px;
   }
 
-  /* Journal part */
+  
   .entry-text-title {
     width: 20em;
     margin: 1em auto;
     padding: 1em;
-    border-radius: 5px;
+    border-radius: 20px;
     border: 1px solid #3A3A5D;
     background-color: #2E2E4A;
     font-family: 'Space Mono', monospace;
@@ -171,14 +172,16 @@
     color: #B0B0C3;
 }
 
-/* Text Box */
+
 .container-row-journal {
     display: flex;
     justify-content: center;
+    max-width: 80%;
 }
 
 .entry-form {
     max-width: 100%;
+
     margin: 0 auto;
 }
 
@@ -191,23 +194,17 @@
 }
 
 .entry-text-box {
-    width: 100%;
-    height: 20em;
+    width: 40em;
+    height: 25em;
     margin: 1em auto;
     padding: 1em;
-    border-radius: 5px;
+    border-radius: 20px;
     border: 1px solid #3A3A5D;
     background-color: #2E2E4A;
     font-family: 'Space Mono', monospace;
     color: white;
 }
 
-@media (min-width: 769px) {
-    .entry-text-box {
-        width: 40em;
-        height: 20em;
-    }
-}
 
 .entry-text-box:focus {
     outline: 2px solid #ffcc00;
@@ -235,7 +232,7 @@
     background-color: #e6b800;
 }
 
-/* Journal Results Section */
+
 .sectionEntryResults {
     width: 100%;
     margin: 0 auto;
@@ -246,6 +243,7 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    max-width: 70%;
 }
 
 .single-entry-div {
@@ -295,4 +293,38 @@
 
 #ImageUpload:hover {
     background-color: #e6b800;
+}
+.single-entry-text {
+  width: 100%; 
+  max-height: 40%; 
+  overflow-y: scroll;
+  margin: 0 auto; 
+  padding: 10px; 
+  background: rgba(255, 255, 255, 0.1); 
+  border-radius: 10px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+  color: white; 
+  font-size: 14px; 
+  font-family: Arial, sans-serif; 
+  scrollbar-width: auto; 
+  scrollbar-color: #4caf50 rgba(255, 255, 255, 0.1); 
+  word-wrap: break-word; 
+  overflow-wrap: break-word;  
+  
+}
+
+
+.single-entry-text::-webkit-scrollbar {
+  width: 8px; 
+}
+
+.single-entry-text::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px; 
+}
+
+.single-entry-text::-webkit-scrollbar-thumb {
+  background-color: #4caf50; 
+  border-radius: 10px; 
+  border: 2px solid rgba(255, 255, 255, 0.1); 
 }

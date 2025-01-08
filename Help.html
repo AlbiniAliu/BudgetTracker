@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Goals</title>
+    <link rel="stylesheet" href="css/help.css">
+</head>
+<body>
+
+
+    <div class="sidebar">
+        <div class="logo-details">
+            <i class="bx bx-money"></i>
+            <span class="logo_name">Budget Tracker</span>
+            <i class="bx bx-menu" id="toggle-btn"></i>
+        </div>
+        <ul class="nav-list">
+            <li><a href="Dashboard.html"><i class="bx bx-grid-alt"></i><span class="links_name">Dashboard</span></a></li>
+            <li><a href="Profile.html"><i class="bx bx-user"></i><span class="links_name">Profile</span></a></li>
+            <li><a href="Transaction.html"><i class="bx bx-transfer"></i><span class="links_name">Transactions</span></a></li>
+            <li><a href="Reports.html"><i class="bx bx-bar-chart-alt"></i><span class="links_name">Reports</span></a></li>
+            <li><a href="Goals.html"><i class="bx bx-target-lock"></i><span class="links_name">Goals</span></a></li>
+            <li><a href="Settings.html"><i class="bx bx-cog"></i><span class="links_name">Settings</span></a></li>
+            <li><a href="Help.html"><i class="bx bx-help-circle"></i><span class="links_name">Help</span></a></li>
+            <li class="logout"><a href="#logout"><i class="bx bx-log-out"></i><span class="links_name">Logout</span></a></li>
+        </ul>
+    </div>
+    <section class="home-section">
+        <div id="welcome">
+            <h1>Welcome To Your Help Center <span>[User]</span></h1>
+            <img src="images/user.png" alt="Profile Picture" id="profileImage">
+        </div>  
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="accordion">
+              <div class="accordion-item">
+                <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">How do I add a new goal or transaction?</span><span class="icon" aria-hidden="true"></span></button>
+                <div class="accordion-content">
+                  <p>Adding a New Goal:<br>
+
+                    Go to the Goals section of the website.<br>
+                    Click on the "Add Goal" button.<br>
+                    Enter the goal name, target amount, and deadline.<br>
+                    Optionally, write notes or upload a relevant image for your goal.<br>
+                    Click "Save" to add the goal.<br>
+                    Adding a New Transaction:<br>
+                    
+                    Navigate to the Transactions section.
+                    Fill out the form in the "Add New Transaction" section:
+                    Enter the transaction name, description, amount, and date.
+                    Choose the transaction type (e.g., Income or Expense).
+                    Click the "Add Transaction" button.
+                    The transaction will appear in the transaction history table, and your overview will update automatically.</p>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button id="accordion-button-2" aria-expanded="false"><span class="accordion-title">How do I change my profile picture?</span><span class="icon" aria-hidden="true"></span></button>
+                <div class="accordion-content">
+                  <p>Go to the Profile section of the website.<br>
+                    Click the "Upload Profile Picture" button (or a similar option).<br>
+                    Select an image file from your device (JPEG, PNG, etc.).<br>
+                    Preview the image to confirm your choice.<br>
+                    Click "Save" to update your profile picture.<br>
+                    The new picture will be displayed across the platform.</p>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button id="accordion-button-3" aria-expanded="false"><span class="accordion-title"> How do I track my progress?</span><span class="icon" aria-hidden="true"></span></button>
+                <div class="accordion-content">
+                  <p>Visit the Dashboard section to view an overview of your financial health.<br>
+                    Check the following:<br>
+                    Savings Goals Progress: Displays your progress for each goal using visual graphs or progress bars.<br>
+                    Transaction Analytics: Shows trends in your income and expenses over time.<br>
+                    Milestone Tracking: Highlights achievements like completed goals or specific savings targets.<br>
+                    Use filters or the search feature to focus on specific categories or time periods.</p>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button id="accordion-button-4" aria-expanded="false"><span class="accordion-title">How do I reset my password?</span><span class="icon" aria-hidden="true"></span></button>
+                <div class="accordion-content">
+                  <p>Go to the Settings or Account section. <br>
+                    Click on the "Change Password" or "Reset Password" option.<br>
+                    Enter your current password for verification.<br>
+                    Enter and confirm your new password.<br>
+                    Click "Save" to apply the changes.<br>
+                    If you forgot your password:<br>
+                    Click on "Forgot Password?" on the login page.<br>
+                    Enter your registered email address.<br>
+                    Check your email for a password reset link and follow the instructions.</p><br>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          <form >
+            <h1 >Contact Us</h1>
+            <input type="text" placeholder="Enter Your Full-Name">
+            <h2>Enter Your Email</h2>
+            <input type="email" name="email" id="email" placeholder="Email">
+            <h2>Enter Your Phone Number</h2>
+            <input type="tel" placeholder="Enter Your Phone Number">
+            <select name="category">
+                <option value="feedback">Feedback</option>
+                <option value="support">Support</option>
+                <option value="general">General Inquiry</option>
+            </select>
+            
+            <h2>Enter Your Message</h2>
+            <textarea name="message" id="message"></textarea>
+          <button type="submit">Submit Your Entry</button>
+        </form>
+    <form  id="review">
+        <h1>We Value Your Feedback!😊</h1>
+        <p>Tell us about your experience with our platform. Your feedback helps us improve</p>
+        <input type="text" placeholder="Your Name (Optional)">
+        <textarea ></textarea>
+     <div id="stars"></div>
+     <br>
+         <button type="submit">Submit Review</button><br><br>
+            <h3>Got any bugs that u want to show us?</h3>
+            <input type="file" accept="image/*">
+    </form>
+    </section>
+    <script src="js/help.js"></script>
+</body>
+</html>
