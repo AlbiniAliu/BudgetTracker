@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Goals</title>
+    <link rel="stylesheet" href="css/goals.css">
+</head>
+<body>
+
+
+    <div class="sidebar">
+        <div class="logo-details">
+            <i class="bx bx-money"></i>
+            <span class="logo_name">Budget Tracker</span>
+            <i class="bx bx-menu" id="toggle-btn"></i>
+        </div>
+        <ul class="nav-list">
+            <li><a href="Dashboard.html"><i class="bx bx-grid-alt"></i><span class="links_name">Dashboard</span></a></li>
+            <li><a href="Profile.html"><i class="bx bx-user"></i><span class="links_name">Profile</span></a></li>
+            <li><a href="Transaction.html"><i class="bx bx-transfer"></i><span class="links_name">Transactions</span></a></li>
+            <li><a href="Reports.html"><i class="bx bx-bar-chart-alt"></i><span class="links_name">Reports</span></a></li>
+            <li><a href="Goals.html"><i class="bx bx-target-lock"></i><span class="links_name">Goals</span></a></li>
+            <li><a href="Settings.html"><i class="bx bx-cog"></i><span class="links_name">Settings</span></a></li>
+            <li><a href="Help.html"><i class="bx bx-help-circle"></i><span class="links_name">Help</span></a></li>
+            <li class="logout"><a href="#logout"><i class="bx bx-log-out"></i><span class="links_name">Logout</span></a></li>
+        </ul>
+    </div>
+    <section class="home-section">
+        <div id="welcome">
+            <h1>Welcome To Your Goals <span>[User]</span></h1>
+            <img src="images/user.png" alt="Profile Picture" id="profileImage">
+        </div>  
+        <div id="journal">
+            <div id="journal-top">
+                <img src="blank" alt="asd" id="image">
+                <button id="ImageUpload" onclick="ImageUpload()">Upload a picture</button>
+                <h1>Add a title to your Goals</h1>
+                <section class="section journal-section">
+                    <div class="container">
+                      <div class="container-row container-row-journal">
+                        <div class="container-item container-item-journal">
+                          <form id="entryForm" action="">
+                            <label for="entry-title" class="journal-label">Entry Title</label>
+                            <input
+                              type="text"
+                              name="entry-title"
+                              id="entry-title"
+                              class="entry-text-title"
+                              placeholder="Name of entry ✏️"
+                            />
+                            <label for="entry" class="journal-label">Today's Entry</label>
+                            <textarea
+                              name="daily-entry"
+                              id="entry"
+                              class="entry-text-box"
+                              placeholder="What's on your mind today? 💭"
+                            ></textarea>
+                            <button class="btn-main entry-submit-btn" type="submit">Submit</button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+              
+        
+                  <section class="section sectionEntryResults" id="entryResultsSection">
+                    <div class="container">
+                      <div class="container-row entryResultRow"></div>
+                    </div>
+                  </section>
+    <script src="js/goals.js"></script>
+</body>
+</html>
