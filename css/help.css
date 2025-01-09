@@ -330,52 +330,59 @@
     background: rgba(255, 255, 255, 0.2);
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
   }
-  
   #stars {
     display: flex;
     justify-content: center;
-    gap: 15px; 
+    gap: 15px;
     margin-bottom: 20px;
     position: relative;
   }
   
   .star-wrapper {
     position: relative;
-    width: 30px; 
-    height: 30px; 
+    width: 30px;
+    height: 30px;
     font-size: 30px;
-    color: #ddd; 
+    color: #ddd;
     cursor: pointer;
     transition: transform 0.2s ease, color 0.2s ease;
   }
   
   .star-wrapper:hover {
-    transform: scale(1.2); 
+    transform: scale(1.2);
   }
   
   .star-wrapper .star-left,
   .star-wrapper .star-right {
     position: absolute;
-    width: 50%; 
+    width: 50%;
     height: 100%;
     top: 0;
     overflow: hidden;
+    pointer-events: auto;
+
   }
   
   .star-wrapper .star-left {
     left: 0;
+    text-align: left;
+    z-index: 1;
   }
   
   .star-wrapper .star-right {
     right: 0;
-  }
+    text-align: right;
+    z-index: 2;
+    transform: rotateY(180deg);
+    }
   
   .star-wrapper.active-left .star-left {
-    color: #ffcc00; 
+    color: #ffcc00;
   }
   
   .star-wrapper.active-right .star-right {
-    color: #ffcc00; 
+    color: #ffcc00;
+  
   }
   #review button {
     width: 100%;

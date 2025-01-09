@@ -58,18 +58,19 @@ for (let i = 1; i <= totalStars; i++) {
   starsContainer.appendChild(wrapper);
 }
 
-
 function updateStars() {
   document.querySelectorAll(".star-wrapper").forEach((star, index) => {
     const value = index + 1;
 
-    
     if (rating >= value) {
+      
       star.classList.add("active-left", "active-right");
     } else if (rating >= value - 0.5) {
+      
       star.classList.add("active-left");
       star.classList.remove("active-right");
     } else {
+      
       star.classList.remove("active-left", "active-right");
     }
   });
