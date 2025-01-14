@@ -36,3 +36,12 @@ function googleTranslateElementInit() {
         layout: google.translate.TranslateElement.InlineLayout.SIMPLE
     }, 'google_translate_element');
 }
+const themeToggle = document.querySelector('#theme-toggle-btn');
+const themeLabel = document.querySelector('.theme-toggle-label');
+
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('white-mode');
+  themeLabel.textContent = document.body.classList.contains('white-mode')
+    ? 'Light Mode'
+    : 'Dark Mode';
+});
