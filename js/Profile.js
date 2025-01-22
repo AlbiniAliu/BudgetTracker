@@ -99,3 +99,34 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
   
+const items = document.querySelectorAll(".accordion button");
+
+function toggleAccordion() {
+  const itemToggle = this.getAttribute('aria-expanded');
+  
+  for (i = 0; i < items.length; i++) {
+    items[i].setAttribute('aria-expanded', 'false');
+  }
+  
+  if (itemToggle == 'false') {
+    this.setAttribute('aria-expanded', 'true');
+  }
+}
+
+items.forEach(item => item.addEventListener('click', toggleAccordion));
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,es,fr,de,it,zh-CN,ja, sq',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+}
+const themeToggle = document.querySelector('#theme-toggle-btn');
+const themeLabel = document.querySelector('.theme-toggle-label');
+
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('white-mode');
+  themeLabel.textContent = document.body.classList.contains('white-mode')
+    ? 'Dark Mode'
+    : 'Light Mode';
+});
